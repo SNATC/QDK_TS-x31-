@@ -1,0 +1,10 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: cryptsetup
+Description: cryptsetup library
+Version: 1.5.1
+Cflags: -I${includedir}
+Libs: -L${libdir} -lcryptsetup

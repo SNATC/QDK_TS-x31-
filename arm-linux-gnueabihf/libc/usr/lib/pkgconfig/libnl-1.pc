@@ -1,0 +1,10 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+exec_prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+libdir=${exec_prefix}/lib
+includedir=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/include
+
+Name: libnl
+Description: Convenience library for netlink sockets
+Version: 1.1
+Libs: -L${libdir} -lnl
+Cflags:

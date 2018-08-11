@@ -1,0 +1,11 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 1.41.4
+Requires: 
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

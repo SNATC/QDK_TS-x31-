@@ -1,0 +1,11 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: liboop-glib2
+Description: Event loop management library (GLIB2 support)
+Version: 1.0
+Requires: liboop = 1.0 glib-2.0
+Libs: -L${libdir} -loop-glib2
+Cflags: -D_REENTRANT -I${includedir}

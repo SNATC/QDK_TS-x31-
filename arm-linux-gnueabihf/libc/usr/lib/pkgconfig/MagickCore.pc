@@ -1,0 +1,10 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/ImageMagick
+
+Name: MagickCore
+Description: MagickCore - C API for ImageMagick
+Version: 6.6.1
+Libs: -L${libdir} -lMagickCore
+Cflags: -I${includedir} -fopenmp

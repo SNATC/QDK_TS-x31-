@@ -1,0 +1,107 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" $Id: srvsearch.1,v 1.6 2004/12/20 14:29:18 evertonm Exp $
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH RULI 1 "October 08, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+srvsearch, sync_srvsearch, smtpsearch, sync_smtpsearch, httpsearch, sync_httpsearch, ruli\-getaddrinfo
+.br
+\- Sample programs for RULI Library (RFC 2782)
+.SH SYNOPSIS
+echo _service._protocol.nongnu.org |
+.B ruli-getaddrinfo
+.br
+echo _service._protocol.nongnu.org |
+.B srvsearch [ options ]
+.br
+echo _service._protocol.nongnu.org |
+.B sync_srvsearch [ options ]
+.br
+echo nongnu.org |
+.B smtpsearch [ options ]
+.br
+echo nongnu.org |
+.B sync_smtpsearch [ options ]
+.br
+echo nongnu.org |
+.B httpsearch [ options ]
+.br
+echo nongnu.org |
+.B sync_httpsearch [ options ]
+.br
+.SH DESCRIPTION
+This manual page documents briefly sample programs for the
+.B ruli(3)
+library.
+.PP
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics, 
+.\" respectively.
+\fBruli\fP is a library aimed at querying DNS SRV resource records.
+.SH OPTIONS
+.TP
+For http searches, one can force the port number by specifying it as the first option.
+.TP
+.BR search
+Use the resolver search list defined in \'/etc/resolv.conf\'.
+.TP
+.BR need_ra
+Require RA (Recursion Available) bit in the name server answer.
+.TP
+.BR noinet
+Don\'t fetch IPv4 addresses.
+.TP
+.BR noinet6
+Don\'t fetch IPv6 addresses.
+.TP
+.BR uri_port
+Assume the specified default port was forced by the user-supplied URI.
+.TP
+.BR nowalk
+Don\'t search addresses missing from the name server answer.
+.TP
+.BR nofall
+Don\'t launch fallback queries for addresses, if the SRV query fails.
+.TP
+.BR nosort6
+Don\'t sort the address list to give preference to IPv6 addresses.
+.SH EXAMPLES
+echo _telnet._tcp.nongnu.org |
+ruli-getaddrinfo
+.br
+echo _smtp._tcp.nongnu.org |
+srvsearch search
+.br
+echo _smtp._tcp.nongnu.org |
+sync_srvsearch search noinet6
+.br
+echo nongnu.org |
+smtpsearch noinet
+.br
+echo nongnu.org |
+sync_smtpsearch nowalk nofall
+.br
+echo nongnu.org |
+httpsearch noinet6
+.br
+echo nongnu.org |
+sync_httpsearch 80
+.br
+.SH SEE ALSO
+ruli(3)
+.SH AUTHOR
+This manual page was written by Everton da Silva Marques <evertonsm@yahoo.com.br>.
+

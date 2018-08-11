@@ -1,0 +1,12 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/ImageMagick
+
+
+Name: Magick++
+Version: 6.6.1
+Description: Magick++ - C++ API for ImageMagick
+Requires: ImageMagick
+Libs: -L${libdir} -lMagick++
+Cflags: -I${includedir}

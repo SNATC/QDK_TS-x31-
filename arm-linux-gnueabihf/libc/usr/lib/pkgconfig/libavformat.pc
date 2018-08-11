@@ -1,0 +1,14 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 53.5.0
+Requires: 
+Requires.private: libavcodec = 53.8.0
+Conflicts:
+Libs: -L${libdir} -lavformat 
+Libs.private: -ldl -lm -pthread -lz
+Cflags: -I${includedir}

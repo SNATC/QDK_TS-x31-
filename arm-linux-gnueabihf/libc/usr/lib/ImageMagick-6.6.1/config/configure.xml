@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuremap [
+<!ELEMENT configuremap (configure)+>
+<!ELEMENT configure (#PCDATA)>
+<!ATTLIST configure name CDATA #REQUIRED>
+<!ATTLIST configure value CDATA #REQUIRED>
+]>
+<configuremap>
+  <configure name="NAME" value="ImageMagick"/>
+  <configure name="LIB_VERSION" value="0x661"/>
+  <configure name="LIB_VERSION_NUMBER" value="6,6,1,5"/>
+  <configure name="RELEASE_DATE" value="2013-12-06"/>
+  <configure name="CONFIGURE" value="./configure  '--prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr' '--host=arm-linux-gnueabihf' '--without-tiff' '--without-perl' '--without-x' 'host_alias=arm-linux-gnueabihf' 'CC=arm-linux-gnueabihf-gcc' 'LDFLAGS=-L/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/lib -L/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/lib' 'CPPFLAGS=-I/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/include -I/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/include'"/>
+  <configure name="PREFIX" value="/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr"/>
+  <configure name="EXEC-PREFIX" value="/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr"/>
+  <configure name="VERSION" value="6.6.1"/>
+  <configure name="CC" value="arm-linux-gnueabihf-gcc -std=gnu99 -std=gnu99"/>
+  <configure name="CFLAGS" value="-fopenmp -g -O2 -Wall -W -pthread"/>
+  <configure name="CPPFLAGS" value="-I/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/include/ImageMagick"/>
+  <configure name="PCFLAGS" value="-fopenmp"/>
+  <configure name="DEFS" value="-DHAVE_CONFIG_H"/>
+  <configure name="LDFLAGS" value="-L/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/lib -L/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/lib -L/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/lib"/>
+  <configure name="LIBS" value="-lMagickCore -lz -lm -lgomp -lpthread "/>
+  <configure name="CXX" value="arm-linux-gnueabihf-g++"/>
+  <configure name="CXXFLAGS" value="-g -O2 -Wall -W -pthread"/>
+  <configure name="DISTCHECK_CONFIG_FLAGS" value="'CC=arm-linux-gnueabihf-gcc' 'CPPFLAGS=-I/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/include -I/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/include' 'LDFLAGS=-L/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/lib -L/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/lib' --disable-deprecated --with-quantum-depth=16 --with-umem=no --with-autotrace=no --with-fontconfig=no --with-gslib=no --with-fontpath= --with-rsvg=no --with-tiff=no --with-xml=no --with-perl=no"/>
+  <configure name="HOST" value="arm-unknown-linux-gnueabihf"/>
+  <configure name="DELEGATES" value="mpeg zlib"/>
+  <configure name="COPYRIGHT" value="Copyright (C) 1999-2010 ImageMagick Studio LLC"/>
+  <configure name="WEBSITE" value="http://www.imagemagick.org"/>
+  <configure name="QuantumDepth" value="16"/>
+</configuremap>

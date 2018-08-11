@@ -1,0 +1,11 @@
+prefix=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=/opt/cross-project/arm/linaro/arm-linux-gnueabihf/libc/usr/include
+
+Name: libsepol
+Description: SELinux policy library
+Version: 2.0.42
+URL: http://userspace.selinuxproject.org/
+Libs: -L${libdir} -lsepol
+Cflags: -I${includedir}
